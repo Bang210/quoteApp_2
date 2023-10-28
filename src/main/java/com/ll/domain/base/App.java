@@ -30,27 +30,17 @@ public class App {
                     quotationController.listup();
                     break;
                 case "수정":
-                    quotationController.correct(getIndexId(rq.getId()));
+                    quotationController.correct(quotationController.getIndexId(rq.getId()));
                     break;
                 case "삭제":
-                    quotationController.delete(getIndexId(rq.getId()));
+                    quotationController.delete(quotationController.getIndexId(rq.getId()));
+                    break;
+                case "정렬" :
+                    quotationController.idSort();
                     break;
                 default:
                     System.out.println("잘못된 명령입니다.");
             }
         }
-    }
-
-    public int[] getIndexId(int id) {
-        int[] indexId = new int[2];
-        indexId[0] = -1;
-        indexId[1] = id;
-        for (int i = 0; i < quotes.size(); i++){
-            if (quotes.get(i).getId() == id) {
-                indexId[0] = i;
-                break;
-            }
-        }
-        return indexId;
     }
 }

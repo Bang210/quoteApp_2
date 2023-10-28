@@ -58,4 +58,22 @@ public class QuotationController {
             scanner.nextLine();
         }
     }
+    public int[] getIndexId(int id) {
+        int[] indexId = new int[2];
+        indexId[0] = -1;
+        indexId[1] = id;
+        for (int i = 0; i < quotes.size(); i++){
+            if (quotes.get(i).getId() == id) {
+                indexId[0] = i;
+                break;
+            }
+        }
+        return indexId;
+    }
+    public void idSort() {
+        for (int i = 0; i < quotes.size(); i++) {
+            quotes.get(i).setId(i + 1);
+        }
+        System.out.println("명언 번호가 정렬되었습니다.");
+    }
 }
