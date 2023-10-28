@@ -30,6 +30,7 @@ public class App {
                     quotationController.listup();
                     break;
                 case "수정":
+                    quotationController.correct(getIndexId(rq.getId()));
                     break;
                 case "삭제":
                     quotationController.delete(getIndexId(rq.getId()));

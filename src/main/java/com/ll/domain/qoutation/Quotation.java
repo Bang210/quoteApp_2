@@ -19,9 +19,15 @@ public class Quotation {
         //명언 반환
         return content;
     }
+    public void setContent(String content) {
+        this.content = content;
+    }
     public String getAuthor() {
         //작가 반환
         return author;
+    }
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
 
