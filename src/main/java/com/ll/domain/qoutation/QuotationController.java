@@ -52,17 +52,18 @@ public class QuotationController {
             quotes.get(indexId[0]).setContent(content);
             System.out.printf("작가(기존): %s\n", quotes.get(indexId[0]).getAuthor());
             System.out.print("작가: ");
-            content = scanner.next();
+            author = scanner.next();
             quotes.get(indexId[0]).setAuthor(author);
             System.out.printf("%d번 명언이 수정되었습니다.\n", indexId[1]);
             scanner.nextLine();
         }
     }
+
     public int[] getIndexId(int id) {
         int[] indexId = new int[2];
         indexId[0] = -1;
         indexId[1] = id;
-        for (int i = 0; i < quotes.size(); i++){
+        for (int i = 0; i < quotes.size(); i++) {
             if (quotes.get(i).getId() == id) {
                 indexId[0] = i;
                 break;
@@ -70,10 +71,15 @@ public class QuotationController {
         }
         return indexId;
     }
+
     public void idSort() {
         for (int i = 0; i < quotes.size(); i++) {
             quotes.get(i).setId(i + 1);
         }
         System.out.println("명언 번호가 정렬되었습니다.");
+    }
+
+    public void commandList() {
+        System.out.print("명령어: 사용 가능한 명령어들을 보여줍니다.\n등록: 새로운 명언을 등록합니다.\n목록: 등록된 명언들을 보여줍니다.\n정렬: 명언 번호를 1부터 오름차순으로 정렬합니다.\n삭제?id=#: #번 명언을 삭제합니다.\n수정?id=#: #번 명언을 수정합니다.\n");
     }
 }

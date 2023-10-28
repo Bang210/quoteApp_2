@@ -14,7 +14,8 @@ public class App {
     public static int idCount = 1;
     public void run() {
         //초기 출력
-        System.out.println("==명언 앱==");
+        System.out.println("======명언 앱======");
+        quotationController.commandList();
         while (true) {
             System.out.print("명령) ");
             String cmd = scanner.nextLine();
@@ -37,6 +38,9 @@ public class App {
                     break;
                 case "정렬" :
                     quotationController.idSort();
+                    break;
+                case "명령어" :
+                    quotationController.commandList();
                     break;
                 default:
                     System.out.println("잘못된 명령입니다.");
