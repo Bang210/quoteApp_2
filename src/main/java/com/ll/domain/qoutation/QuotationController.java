@@ -76,6 +76,7 @@ public class QuotationController {
         for (int i = 0; i < quotes.size(); i++) {
             quotes.get(i).setId(i + 1);
         }
+        idCount = quotes.size() + 1;
         System.out.println("명언 번호가 정렬되었습니다.");
     }
 
